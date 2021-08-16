@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object.defineProperty方法</title>
+    <!-- 引入vue   -->
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <script>
+        let person= {
+            name:"张三",
+            sex:"男"
+        }
+
+        Object.defineProperty(person,"age",{
+            // value:18,
+            // enumerable:true,//可遍历，控制属性是否可枚举
+            // writable:true,//控制属性是否可以被修改
+            // configurable:true//控制属性是否可以被删除
+
+            get(){
+                console.log("有人读取age属性了")
+                return number
+            },
+
+            set(value){
+                console.log("有人修改了age属性，且是",value)
+                number = value
+            }
+        })//本身不可遍历
+
+
+        for (let key in person){
+            console.log('@',person[key])
+        }
+
+
+
+
+        let number = 18
+        
+
+        console.log(person)
+    </script>
+</body>
+</html>

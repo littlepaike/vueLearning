@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>初识vue</title>
+    <!-- 引入vue   -->
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        单向数据绑定：<input type="text" v-bind:value="name">
+        <br>
+        双向数据绑定：<input type="text" v-model:value="name">
+    </div>
+    <script type="text/javascript">
+        Vue.config.productionTip = false  //阻止VUE在启动时生成生产提示
+    //创建Vue实例
+    const v = new Vue({
+        // el:'#root', //element   用于指定当前VUE实例为哪个容器服务，值通常为css选择器字符串
+        // data:{   //对象式
+        //     name:"范镇业",
+        // }
+
+
+        //data函数式
+        data:function(){
+            console.log('@@@',this)//此处的this是vue实例对象
+            return{
+                name:"范镇业"
+            }
+        }
+    })
+
+
+    setTimeout(() => {
+        v.$mount("#root")//el的第二种写法  挂载 
+    }, 1000);
+
+    </script>
+</body>
+</html>
