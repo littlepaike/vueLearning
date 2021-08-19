@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>methods实现</title>
+    <!-- 引入vue   -->
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+    姓: <input type="text" name="张" v-model="firstname" id=""> <br>
+    名: <input type="text" name="三" v-model="lastname">
+    全名: <span>{{fullName()}}</span>
+    </div>
+    
+    <script>
+        Vue
+        const vm = new Vue({
+            el:"#root",
+            data:{
+                firstname:"张",
+                lastname:"三",
+            },
+            methods:{
+                fullName(){
+                    return this.firstname+'-'+this.lastname
+                }
+            }
+        })
+    </script>
+</body>
+</html>
